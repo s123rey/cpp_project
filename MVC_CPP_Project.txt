@@ -1,0 +1,23 @@
+The model-view-controller is a design mechanism used in designing the software. MVC divides the software into three logical units called a Model (dealing with the data storage), a View(dealing with the representation part),
+and a Controller (a medium acting between View and Model). The MVC mechanism keeps the data and UI different from each other giving a more flexible design for the developers.
+
+The code used in this project describes the MVC structure and is written in C++ language.
+
+Walkthrough of the code:
+
+Model1 m(10); - This line creates an object of the Model class. In other words, we create a data inside our storage (or Model). The data is initialized to 10.
+
+Controller c (&m) - Passing a reference of the Model object helps the controller attach to the exact model we want to access data from. In a MVC design, there are multiple models storing different data.
+			For example, User details can be stored in one model while User saved addresses in another linking them with a foreign key.
+
+m.set_controller (&c) - Setting the controller to the Model class.
+
+View_sq view_sq -  Initializing an object of View through which we will display the data to the user.
+
+view_sq.register_view(&c) - In this line we register the view with the appropriate controller which in turn is attached to the appropriate model. In this way, the controller can be attached to the View
+				and to the Model for passing the data. 
+
+m.change(20) - In this final line of code, we change the data of the variable initialized in the first line of code (Model1 m(10)) to 20. Next, the change method asks for the updated value and prints the square of the updated value.
+
+
+ 
