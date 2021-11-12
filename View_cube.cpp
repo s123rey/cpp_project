@@ -16,3 +16,8 @@ using namespace std;
 		ptr_c->add(this);
 	};
 	
+	void View_cube::deregister_view(Controller_base* ptr_c)
+	{
+		ptr_c->delview(this);
+	}
+	

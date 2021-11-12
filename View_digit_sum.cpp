@@ -6,13 +6,19 @@ using namespace std;
 	{
 		int n,sum=0,m;
 		int x = ptr_model_->get_x();
-		while(x>0)    
-		{    
-		m=x%10;    
-		sum=sum+m;    
-		x=x/10;    
-		}    
-		cout << "Sum of digits is : " << sum << "\n";
+		if(x>=0){
+			while(x>0)    
+			{    
+			m=x%10;    
+			sum=sum+m;    
+			x=x/10;    
+			}    
+			cout << "Sum of digits is : " << sum << "\n";
+		}
+		else
+		{
+			cout<<"Given Number is negative, We will update logic for Digit_sum."<<"\n";
+		}
 	}
 	void View_digit_sum::get_model(Model *ptr_model)
 	{
@@ -22,4 +28,9 @@ using namespace std;
 	{
 		ptr_c->add(this);
 	};
+	
+	void View_digit_sum::deregister_view(Controller_base* ptr_c)
+	{
+		ptr_c->delview(this);
+	}
 	

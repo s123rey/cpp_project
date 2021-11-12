@@ -1,5 +1,6 @@
 #include<iostream>
 #include "Model1.h"
+using namespace std;
 //#include "Controller_base.h"
 /*class Model1 : public Model 
 {
@@ -8,9 +9,11 @@
 	void Model1::set_controller(Controller_base* ptr_c)
 	{
 		ptr_c_ = ptr_c;
+		
 	}
 	void Model1 :: change(int x) 
 	{
+		//cout<<"Inside change"<<endl;
 		x_ = x;
 		ptr_c_->update();
 	}
